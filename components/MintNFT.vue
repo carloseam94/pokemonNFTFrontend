@@ -9,6 +9,7 @@
       sm:items-center sm:pt-0
     "
   >
+    <script src="snarkjs.min.js"></script>
     <h1 class="text-center pt-8 text-xl">Mint a PokemonNFT</h1>
     <h2 v-show="walletConnected" class="text-center">Total: {{limit}}   Minted: {{minted}}</h2>
     <div class="flex pt-8">
@@ -61,7 +62,7 @@
       > 
         Get Leaves
       </button>
-       <!-- <button
+       <button
         class="
           mx-auto
           bg-green-400
@@ -75,7 +76,7 @@
         :disabled="mintingNFT"
       > 
         Run Proof
-      </button> -->
+      </button>
     </div>
     <div class="flex pt-8" >
       <!-- <div>proof: {{proofText}}</div>
@@ -93,7 +94,8 @@ import { ethers } from "ethers";
 import VueSpinners from 'vue-spinners'
 import PokemonNFT from '../utils/PokemonNFT.json';
 import Vue from 'vue';
-// const snarkjs = require("snarkjs")
+// import merkletree from "../assets/javascripts/merkletree.wasm";
+// import zkey from "merkletree_0001.zkey";
 Vue.use(VueSpinners)
 
 export default {
@@ -298,16 +300,24 @@ export default {
       }
     },
     async runProof() {
-    //   const { proof, publicSignals } =
-    //   await snarkjs.groth16.fullProve( { a: 3, b: 11}, "circuit.wasm", "circuit_final.zkey");
 
-    //   this.proofText = JSON.stringify(proof, null, 1);
+      alert("working on this")
 
-    //   const vkey = await fetch("verification_key.json").then( function(res) {
-    //       return res.json();
-    //   });
+      // console.log(merkletree);
+      // console.log(zkey);
 
-    //   this.proofResult = await snarkjs.groth16.verify(vkey, publicSignals, proof); 
+      // var leaves = this.leaves;
+      // const { proof:_proof, publicSignals:_publicSignals } = await window.snarkjs.groth16.fullProve( {leaves}, "../utils/merkletree.wasm", "../utils/merkletree_0001.zkey");
+
+      // this.proofText = JSON.stringify(proof, null, 1); 
+
+      // console.log(this.proofText)
+
+      // const vkey = await fetch("verification_key.json").then( function(res) {
+      //     return res.json();
+      // });
+
+      // this.proofResult = await snarkjs.groth16.verify(vkey, publicSignals, proof); 
     }
   },
 };
